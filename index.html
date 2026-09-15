@@ -1,0 +1,1688 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Essence Select | Perfumes Premium</title>
+<meta name="description" content="Essence Select | Perfumes premium para hombres y mujeres. Atlautla, Ozumba y alrededores.">
+
+<style>
+:root{
+  --bg:#080808;
+  --panel:#111111;
+  --line:#292929;
+  --text:#f5f5f5;
+  --muted:#9b9b9b;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.6;
+}
+
+a{color:inherit;text-decoration:none}
+button,input{font:inherit}
+.container{width:min(1120px,92%);margin:auto}
+
+/* ================= HEADER ================= */
+
+header{
+  position:sticky;
+  top:0;
+  z-index:1000;
+  background:rgba(8,8,8,.96);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+
+.nav{
+  min-height:72px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.brand img{
+  width:100px;
+  max-height:46px;
+  object-fit:contain;
+  display:block;
+}
+
+.brand-text strong{
+  display:block;
+  font-family:Georgia,serif;
+  font-size:16px;
+  letter-spacing:2px;
+}
+
+.brand-text span{
+  display:block;
+  color:#888;
+  font-size:8px;
+  letter-spacing:2px;
+}
+
+.nav-links{
+  display:flex;
+  gap:22px;
+}
+
+.nav-links a{
+  font-size:11px;
+  letter-spacing:1px;
+  color:#ddd;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  text-align:center;
+  padding:75px 0 60px;
+  border-bottom:1px solid var(--line);
+}
+
+.hero-logo{
+  display:block;
+  width:min(330px,75%);
+  max-height:145px;
+  object-fit:contain;
+  margin:0 auto 24px;
+}
+
+.hero h1{
+  font-family:Georgia,serif;
+  font-size:clamp(40px,7vw,68px);
+  font-weight:400;
+  line-height:1.05;
+}
+
+.hero p{
+  max-width:620px;
+  margin:18px auto 28px;
+  color:var(--muted);
+  font-size:14px;
+}
+
+.hero-actions{
+  display:flex;
+  justify-content:center;
+  gap:10px;
+  flex-wrap:wrap;
+}
+
+.btn,.whatsapp{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border:1px solid #444;
+  padding:12px 18px;
+  font-size:10px;
+  letter-spacing:1px;
+  font-weight:bold;
+  transition:.2s;
+}
+
+.btn:hover,.whatsapp:hover{
+  background:#fff;
+  color:#000;
+  border-color:#fff;
+}
+
+/* ================= SEARCH ================= */
+
+.search-wrap{
+  padding:42px 0 15px;
+}
+
+.search{
+  display:flex;
+  max-width:680px;
+  margin:0 auto 20px;
+  border:1px solid var(--line);
+  background:var(--panel);
+  border-radius:10px;
+  padding:3px 12px;
+}
+
+.search span{
+  padding:10px 5px;
+  color:#aaa;
+}
+
+.search input{
+  flex:1;
+  background:none;
+  border:0;
+  outline:0;
+  color:#fff;
+  padding:11px;
+  font-size:14px;
+}
+
+.search input::placeholder{color:#666}
+
+.categories{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:10px;
+}
+
+.category-btn{
+  text-align:center;
+  background:var(--panel);
+  border:1px solid var(--line);
+  padding:14px 8px;
+  border-radius:9px;
+  font-size:10px;
+  letter-spacing:1px;
+  font-weight:bold;
+}
+
+.category-btn:hover{
+  background:#fff;
+  color:#000;
+}
+
+/* ================= SECTIONS ================= */
+
+section{padding:58px 0}
+
+.section-head{margin-bottom:28px}
+
+.eyebrow{
+  font-size:8px;
+  letter-spacing:3px;
+  color:#777;
+  margin-bottom:7px;
+}
+
+h2{
+  font-family:Georgia,serif;
+  font-weight:400;
+  font-size:34px;
+}
+
+.section-head p{
+  color:var(--muted);
+  font-size:13px;
+  margin-top:5px;
+}
+
+/* ================= PERFUME CARDS ================= */
+
+/*
+  IMPORTANTE:
+  El frasco queda limitado por tamaño.
+  !important evita que otra regla vuelva a poner width:100% / height:100%.
+*/
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.product-card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  overflow:hidden;
+}
+
+.product-photo{
+  width:100%;
+  height:245px;
+  background:#f3f3f3;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden !important;
+  position:relative;
+}
+
+.product-photo img{
+  display:block !important;
+  width:auto !important;
+  height:auto !important;
+  max-width:45% !important;
+  max-height:72% !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  margin:auto !important;
+  flex:0 0 auto !important;
+}
+
+.no-image{
+  color:#777;
+  font-size:9px;
+  letter-spacing:2px;
+  text-align:center;
+}
+
+.product-info{
+  padding:19px;
+}
+
+.product-type{
+  font-size:8px;
+  letter-spacing:2px;
+  color:#777;
+  margin-bottom:7px;
+}
+
+.product-name{
+  font-family:Georgia,serif;
+  font-size:21px;
+  margin-bottom:7px;
+}
+
+.product-desc{
+  font-size:11px;
+  color:#aaa;
+  margin-bottom:11px;
+}
+
+.product-price{
+  font-size:12px;
+  margin-bottom:10px;
+}
+
+.status{
+  font-size:9px;
+  color:#ccc;
+  margin-bottom:14px;
+}
+
+.whatsapp{
+  width:100%;
+  cursor:pointer;
+}
+
+.view-details{
+  width:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:transparent;
+  color:#fff;
+  border:1px solid #444;
+  padding:12px 18px;
+  margin-bottom:8px;
+  font-size:10px;
+  letter-spacing:1px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.view-details:hover{
+  background:#fff;
+  color:#000;
+  border-color:#fff;
+}
+/* ================= SEARCH RESULTS ================= */
+
+#search-results{display:none}
+
+.no-results{
+  grid-column:1/-1;
+  border:1px solid var(--line);
+  background:var(--panel);
+  padding:25px;
+  text-align:center;
+  color:#999;
+  font-size:12px;
+}
+
+/* ================= CATALOG PAGES ================= */
+
+.catalog-page{
+  display:none;
+  min-height:70vh;
+}
+
+.catalog-page.active{display:block}
+
+.back-home{
+  position:sticky;
+  top:75px;
+  z-index:1000;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  width:max-content;
+
+  background:#111;
+  border:1px solid #333;
+  color:#fff;
+
+  padding:13px 20px;
+  margin-bottom:25px;
+
+  font-size:11px;
+  font-weight:bold;
+  letter-spacing:1.5px;
+
+  cursor:pointer;
+  transition:.2s;
+}
+
+.back-home:hover{
+  background:#fff;
+  color:#000;
+  border-color:#fff;
+}
+
+.back{
+  display:inline-block;
+  color:#aaa;
+  font-size:10px;
+  letter-spacing:1px;
+  margin-bottom:24px;
+}
+
+.catalog-title{
+  margin-bottom:27px;
+}
+
+.catalog-title h2{font-size:38px}
+
+.gender-filter{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-bottom:25px;
+}
+
+.gender-btn{
+  background:#111;
+  color:#ddd;
+  border:1px solid #292929;
+  padding:11px 18px;
+  font-size:9px;
+  letter-spacing:1.5px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:.2s;
+}
+
+.gender-btn:hover{
+  border-color:#777;
+  color:#fff;
+}
+
+.gender-btn.active{
+  background:#fff;
+  color:#000;
+  border-color:#fff;
+}
+
+/* ================= DECANTS ================= */
+
+.decant-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.decant-card{
+  background:var(--panel);
+  border:1px solid var(--line);
+  padding:17px;
+}
+
+.decant-photo{
+  width:100%;
+  height:205px;
+  background:#f3f3f3;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden !important;
+  position:relative;
+}
+
+.decant-photo img{
+  display:block !important;
+  width:auto !important;
+  height:auto !important;
+  max-width:42% !important;
+  max-height:68% !important;
+  min-width:0 !important;
+  min-height:0 !important;
+  object-fit:contain !important;
+  object-position:center !important;
+  margin:auto !important;
+  flex:0 0 auto !important;
+}
+
+.decant-card h3{
+  font-family:Georgia,serif;
+  font-size:20px;
+  margin:15px 0 10px;
+}
+
+.decant-row{
+  display:flex;
+  justify-content:space-between;
+  padding:8px 0;
+  border-bottom:1px solid #252525;
+  font-size:11px;
+}
+
+.decant-price{font-weight:bold}
+
+.decant-card .whatsapp{margin-top:13px}
+
+/* ================= STOCK / INFO ================= */
+
+.stock{
+  border:1px solid var(--line);
+  background:var(--panel);
+  padding:48px 20px;
+  text-align:center;
+}
+
+.stock h3{
+  font-family:Georgia,serif;
+  font-size:29px;
+}
+
+.stock p{
+  color:var(--muted);
+  font-size:12px;
+  margin-top:5px;
+}
+
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.info-card{
+  border:1px solid var(--line);
+  background:var(--panel);
+  padding:23px;
+}
+
+.info-card h3{
+  font-family:Georgia,serif;
+  font-size:19px;
+  margin-bottom:7px;
+}
+
+.info-card p{
+  color:var(--muted);
+  font-size:11px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  border-top:1px solid var(--line);
+  padding:32px 0;
+  color:#777;
+  font-size:10px;
+}
+
+.footer-row{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+  flex-wrap:wrap;
+}
+
+.footer-brand{
+  font-family:Georgia,serif;
+  color:#ddd;
+  letter-spacing:2px;
+}
+
+/* ================= MOBILE ================= */
+
+.perfume-modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.78);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+  z-index:3000;
+}
+
+.perfume-modal.active{
+  display:flex;
+}
+
+.perfume-modal-box{
+  width:min(520px,100%);
+  max-height:90vh;
+  overflow-y:auto;
+  background:#111;
+  border:1px solid #333;
+  padding:32px;
+  position:relative;
+  box-shadow:0 20px 60px rgba(0,0,0,.6);
+}
+
+.close-modal{
+  position:absolute;
+  top:12px;
+  right:15px;
+  background:none;
+  border:0;
+  color:#aaa;
+  font-size:28px;
+  line-height:1;
+  cursor:pointer;
+}
+
+.close-modal:hover{
+  color:#fff;
+}
+
+.modal-eyebrow{
+  color:#777;
+  font-size:8px;
+  letter-spacing:3px;
+  margin-bottom:8px;
+}
+
+.perfume-modal-box h2{
+  font-family:Georgia,serif;
+  font-size:34px;
+  font-weight:400;
+  padding-right:30px;
+  margin-bottom:12px;
+}
+
+.modal-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-bottom:25px;
+}
+
+.modal-tags span{
+  border:1px solid #333;
+  padding:6px 9px;
+  color:#aaa;
+  font-size:8px;
+  letter-spacing:1px;
+}
+
+.modal-section{
+  border-top:1px solid #292929;
+  padding:17px 0;
+}
+
+.modal-section h3{
+  font-family:Georgia,serif;
+  font-size:17px;
+  font-weight:400;
+  margin-bottom:5px;
+}
+
+.modal-section p{
+  color:#999;
+  font-size:12px;
+  line-height:1.7;
+}
+
+@media(max-width:520px){
+
+  .perfume-modal{
+    padding:12px;
+  }
+
+  .perfume-modal-box{
+    padding:25px 20px;
+  }
+
+  .perfume-modal-box h2{
+    font-size:28px;
+  }
+
+}
+.menu-toggle{
+  display:none;
+
+  width:42px;
+  height:42px;
+
+  background:transparent;
+  border:1px solid #333;
+
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  gap:5px;
+
+  cursor:pointer;
+}
+
+.menu-toggle span{
+  display:block;
+  width:18px;
+  height:1px;
+  background:#fff;
+}
+
+.mobile-menu{
+  display:none;
+}
+
+@media(max-width:800px){
+
+  .menu-toggle{
+    display:flex;
+    position:absolute;
+    right:16px;
+    top:50%;
+    transform:translateY(-50%);
+  }
+
+  .mobile-menu{
+    position:fixed;
+    top:64px;
+    left:0;
+    right:0;
+
+    background:#0b0b0b;
+    border-top:1px solid #222;
+    border-bottom:1px solid #333;
+
+    padding:8px;
+
+    z-index:2500;
+
+    flex-direction:column;
+  }
+
+  .mobile-menu.active{
+    display:flex;
+  }
+
+  .mobile-menu button{
+    background:none;
+    border:0;
+    border-bottom:1px solid #222;
+
+    color:#fff;
+
+    padding:16px 12px;
+
+    text-align:left;
+
+    font-size:11px;
+    letter-spacing:2px;
+
+    cursor:pointer;
+  }
+
+  .mobile-menu button:last-child{
+    border-bottom:0;
+  }
+
+  .mobile-menu button:active{
+    background:#191919;
+  }
+
+}
+
+@media(max-width:800px){
+  .nav-links{display:none}
+  .product-grid,.decant-grid{grid-template-columns:repeat(2,1fr)}
+  .info-grid{grid-template-columns:1fr}
+  .categories{grid-template-columns:repeat(2,1fr)}
+
+  .back-home{
+  top:64px;
+  width:100%;
+  padding:14px;
+  font-size:11px;
+}
+}
+
+@media(max-width:520px){
+  .brand img{width:82px}
+  .brand-text strong{font-size:12px}
+
+  .hero{padding:52px 0 45px}
+
+  .hero-logo{
+    width:245px;
+    max-height:115px;
+  }
+
+  .hero h1{font-size:40px}
+
+  .product-grid,.decant-grid{
+    grid-template-columns:1fr;
+  }
+
+  .product-photo{
+    height:225px;
+  }
+
+  .product-photo img{
+    max-width:42% !important;
+    max-height:68% !important;
+  }
+
+  .decant-photo{
+    height:210px;
+  }
+
+  .decant-photo img{
+    max-width:40% !important;
+    max-height:65% !important;
+  }
+
+  section{padding:45px 0}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#" onclick="showHome();return false;">
+      <img src="images/logo.png" alt="Essence Select">
+      <div class="brand-text">
+        <strong>ESSENCE SELECT</strong>
+        <span>TU AROMA. TU ESENCIA.</span>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#" onclick="showHome();return false;">INICIO</a>
+      <a href="#" onclick="openCatalog('designer');return false;">DISEÑADOR</a>
+      <a href="#" onclick="openCatalog('arabes');return false;">ÁRABES</a>
+      <a href="#" onclick="openDecants();return false;">DECANTS</a>
+      <a href="#contacto">CONTACTO</a>
+    </nav>
+  </div>
+
+  <button class="menu-toggle" onclick="toggleMobileMenu()" aria-label="Abrir menú">
+  <span></span>
+  <span></span>
+  <span></span>
+</button>
+</header>
+
+<div id="mobileMenu" class="mobile-menu">
+
+  <button onclick="mobileGoHome()">
+    INICIO
+  </button>
+
+  <button onclick="mobileGoCatalog('designer')">
+    DISEÑADOR
+  </button>
+
+  <button onclick="mobileGoCatalog('arabes')">
+    ÁRABES
+  </button>
+
+  <button onclick="mobileGoDecants()">
+    DECANTS
+  </button>
+
+  <button onclick="mobileGoContact()">
+    CONTACTO
+  </button>
+
+</div>
+
+<main>
+
+<div id="home">
+
+<section class="hero">
+  <img class="hero-logo" src="images/logo.png" alt="Essence Select">
+  <h1>Tu aroma. Tu esencia.</h1>
+  <p>Perfumes premium para hombres y mujeres que quieren destacar. Encuentra tu próximo aroma con Essence Select.</p>
+
+  <div class="hero-actions">
+    <a class="btn" href="#" onclick="openCatalog('designer');return false;">VER DISEÑADORES</a>
+    <a class="btn" href="#" onclick="openCatalog('arabes');return false;">VER ÁRABES</a>
+    <a class="btn" href="#" onclick="openDecants();return false;">VER DECANTS</a>
+  </div>
+</section>
+
+<section class="search-wrap" id="catalogo">
+  <div class="container">
+
+    <div class="search">
+      <span>⌕</span>
+      <input id="searchInput" type="search" placeholder="Buscar perfume..." autocomplete="off">
+    </div>
+
+    <div class="categories">
+      <a class="category-btn" href="#" onclick="openCatalog('designer');return false;">DISEÑADOR</a>
+      <a class="category-btn" href="#" onclick="openCatalog('arabes');return false;">ÁRABES</a>
+      <a class="category-btn" href="#" onclick="openDecants();return false;">DECANTS</a>
+      <a class="category-btn" href="#stock">PRÓXIMAMENTE</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="search-results">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">RESULTADOS</div>
+      <h2>Perfumes encontrados</h2>
+    </div>
+    <div id="resultsGrid" class="product-grid"></div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">ESSENCE SELECT</div>
+      <h2>Destacados</h2>
+      <p>Una selección de nuestro catálogo.</p>
+    </div>
+    <div id="featuredGrid" class="product-grid"></div>
+  </div>
+</section>
+
+<section id="stock">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">MUY PRONTO</div>
+      <h2>Stock disponible</h2>
+    </div>
+
+    <div class="stock">
+      <h3>Próximamente</h3>
+      <p>Estamos preparando nuestro primer stock para ofrecer entregas más rápidas.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">CÓMO COMPRAR</div>
+      <h2>Simple y directo</h2>
+    </div>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>01. Elige</h3>
+        <p>Busca un perfume o pídenos una recomendación según tu gusto y presupuesto.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>02. Aparta</h3>
+        <p>Para pedidos se solicita un anticipo del 50% y el resto se paga al recibir.</p>
+      </div>
+
+      <div class="info-card">
+        <h3>03. Recibe</h3>
+        <p>Realizamos entregas presenciales en Atlautla, Ozumba y alrededores.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<section id="catalog-page" class="catalog-page">
+  <div class="container">
+<button class="back-home" onclick="showHome();return false;">
+  ← VOLVER AL INICIO
+</button>
+
+    <div class="catalog-title">
+      <div class="eyebrow">CATÁLOGO</div>
+      <h2 id="catalogHeading"></h2>
+      <p id="catalogDescription" style="color:#999;font-size:13px;margin-top:5px"></p>
+    </div>
+
+    <div class="gender-filter">
+  <button class="gender-btn active" onclick="filterGender('all')">TODOS</button>
+  <button class="gender-btn" onclick="filterGender('hombre')">HOMBRE</button>
+  <button class="gender-btn" onclick="filterGender('mujer')">MUJER</button>
+  <button class="gender-btn" onclick="filterGender('unisex')">UNISEX</button>
+</div>
+
+    <div id="catalogGrid" class="product-grid"></div>
+  </div>
+</section>
+
+<section id="decants-page" class="catalog-page">
+  <div class="container">
+    <a class="back" href="#" onclick="showHome();return false;">← VOLVER AL INICIO</a>
+
+    <div class="catalog-title">
+      <div class="eyebrow">DECANTS</div>
+      <h2>Prueba antes de comprar</h2>
+      <p style="color:#999;font-size:13px;margin-top:5px">Presentaciones de 5 ml y 10 ml.</p>
+    </div>
+
+    <div id="decantGrid" class="decant-grid"></div>
+  </div>
+</section>
+
+<section id="contacto">
+  <div class="container">
+    <div class="section-head">
+      <div class="eyebrow">CONTACTO</div>
+      <h2>¿Buscas un perfume?</h2>
+      <p>Escríbenos y te ayudamos a encontrar el aroma ideal.</p>
+    </div>
+
+    <a class="whatsapp" id="generalWhatsApp" href="#" style="max-width:360px">
+      CONSULTAR POR WHATSAPP
+    </a>
+  </div>
+</section>
+
+</main>
+
+<div id="perfumeModal" class="perfume-modal">
+  <div class="perfume-modal-box">
+
+    <button class="close-modal" onclick="closePerfumeDetails()">×</button>
+
+    <div class="modal-eyebrow">ESSENCE SELECT</div>
+
+    <h2 id="modalName">Nombre del perfume</h2>
+
+    <div class="modal-tags" id="modalTags"></div>
+
+    <div class="modal-section">
+      <h3>¿A qué huele?</h3>
+      <p id="modalSmell"></p>
+    </div>
+
+    <div class="modal-section">
+      <h3>¿Cuándo usarlo?</h3>
+      <p id="modalWhen"></p>
+    </div>
+
+    <div class="modal-section">
+      <h3>Ocasiones</h3>
+      <p id="modalOccasions"></p>
+    </div>
+
+    <a id="modalWhatsApp" class="whatsapp" href="#" target="_blank">
+      CONSULTAR POR WHATSAPP
+    </a>
+
+  </div>
+</div>
+
+<footer>
+  <div class="container footer-row">
+    <div class="footer-brand">ESSENCE SELECT</div>
+    <div>Perfumes premium · Atlautla, Ozumba y alrededores</div>
+    <div>© 2026 Essence Select</div>
+  </div>
+</footer>
+
+<script>
+/* ================= CONFIGURACIÓN ================= */
+
+const WHATSAPP_NUMBER = "TU_NUMERO_AQUI";
+
+/* ================= CATÁLOGO ================= */
+
+const perfumes = [
+/* DISEÑADOR */
+
+{name:"Dior Sauvage Edp",category:"designer",gender:"hombre",image:"images/dior-sauvage-edp.avif",
+tags:["Fresco","Especiado","Amaderado"],
+smell:"Fresco y especiado, con bergamota, un toque de vainilla y un fondo amaderado.",
+when:"Ideal para salir, citas, eventos y también para uso diario.",
+occasions:"Citas · Salidas · Eventos · Diario"},
+
+{name:"Dior Sauvage Edt",category:"designer",gender:"hombre",image:"images/dior-sauvage.avif",
+tags:["Fresco","Cítrico","Amaderado"],
+smell:"Fresco, cítrico y ligeramente especiado, con un fondo amaderado y limpio.",
+when:"Perfecto para el día, salidas casuales, escuela y ocasiones especiales.",
+occasions:"Escuela · Diario · Casual · Salidas"},
+
+{name:"Versace Eros Edp",category:"designer",gender:"hombre",image:"images/versace-eros-edp.avif",
+tags:["Dulce","Amaderado","Sensual"],
+smell:"Dulce y aromático, con vainilla, menta y un fondo cálido y amaderado.",
+when:"Ideal para noches, citas, fiestas y ocasiones donde quieras destacar.",
+occasions:"Citas · Fiestas · Noches · Eventos"},
+
+{name:"Versace Eros Edt",category:"designer",gender:"hombre",image:"images/versace-eros.avif",
+tags:["Dulce","Fresco","Aromático"],
+smell:"Fresco y dulce, con menta, cítricos y un fondo cálido de vainilla y maderas.",
+when:"Ideal para salidas, citas, fiestas y noches.",
+occasions:"Citas · Fiestas · Noches · Salidas"},
+
+{name:"Versace Eros Energy",category:"designer",gender:"hombre",image:"images/versace-energy.avif",
+tags:["Cítrico","Fresco","Amaderado"],
+smell:"Cítrico y vibrante, con una sensación fresca y un fondo ligeramente amaderado.",
+when:"Excelente para días cálidos, salidas casuales y uso diario.",
+occasions:"Diario · Escuela · Casual · Días cálidos"},
+
+{name:"Versace Dylan Blue",category:"designer",gender:"hombre",image:"images/versace-dylan.avif",
+tags:["Fresco","Aromático","Amaderado"],
+smell:"Fresco y limpio, con cítricos, notas acuáticas y un fondo amaderado.",
+when:"Muy versátil para el día, escuela, trabajo y salidas.",
+occasions:"Escuela · Trabajo · Diario · Salidas"},
+
+{name:"Versace Pour Homme",category:"designer",gender:"hombre",image:"images/versace-pour-homme.avif",
+tags:["Fresco","Cítrico","Limpio"],
+smell:"Fresco, limpio y cítrico, con un estilo ligero y elegante.",
+when:"Ideal para días cálidos, escuela, trabajo y uso diario.",
+occasions:"Escuela · Trabajo · Diario · Casual"},
+
+{name:"Valentino Born in Roma Intense",category:"designer",gender:"hombre",image:"images/valentino-intense.avif",
+tags:["Dulce","Vainilla","Ambarado"],
+smell:"Dulce y cálido, con vainilla y un fondo ambarado y elegante.",
+when:"Perfecto para noches, citas, fiestas y ocasiones especiales.",
+occasions:"Citas · Noches · Fiestas · Eventos"},
+
+{name:"Valentino Born in Roma Edt",category:"designer",gender:"hombre",image:"images/valentino-edt.avif",
+tags:["Aromático","Fresco","Amaderado"],
+smell:"Aromático y fresco, con un toque ligeramente dulce y un fondo amaderado.",
+when:"Muy versátil para diario, escuela, salidas y ocasiones casuales.",
+occasions:"Escuela · Diario · Casual · Salidas"},
+
+{name:"JPG Le Beau Le Parfum",category:"designer",gender:"hombre",image:"images/jpg-le-parfum.avif",
+tags:["Dulce","Tropical","Amaderado"],
+smell:"Dulce y tropical, con coco, piña y un fondo cálido y amaderado.",
+when:"Ideal para noches, citas y ocasiones donde quieras destacar.",
+occasions:"Citas · Noches · Fiestas · Salidas"},
+
+{name:"JPG Le Beau Paradice Garden",category:"designer",gender:"hombre",image:"images/jpg-garden.avif",
+tags:["Tropical","Fresco","Amaderado"],
+smell:"Tropical y fresco, con coco, higo verde y un fondo de sándalo.",
+when:"Ideal para días cálidos, vacaciones, salidas y ocasiones casuales.",
+occasions:"Vacaciones · Casual · Salidas · Días cálidos"},
+
+{name:"JPG Le Male Elixir",category:"designer",gender:"hombre",image:"images/jpg-elixir.avif",
+tags:["Dulce","Vainilla","Ambarado"],
+smell:"Intenso, dulce y cálido, con lavanda, haba tonka, vainilla y un toque ambarado.",
+when:"Perfecto para noches, citas, fiestas y clima fresco.",
+occasions:"Citas · Noches · Fiestas · Clima fresco"},
+
+{name:"JPG Le Male Le Parfum",category:"designer",gender:"hombre",image:"images/jpg-le-male.avif",
+tags:["Dulce","Especiado","Elegante"],
+smell:"Cálido y elegante, con cardamomo, lavanda, vainilla y un fondo amaderado.",
+when:"Ideal para noches, citas, eventos y ocasiones formales.",
+occasions:"Citas · Eventos · Noches · Formal"},
+
+{name:"YSL Y Edp",category:"designer",gender:"hombre",image:"images/ysl-y.avif",
+tags:["Fresco","Aromático","Amaderado"],
+smell:"Fresco y aromático, con cítricos, manzana y un fondo amaderado ligeramente dulce.",
+when:"Excelente para diario, escuela, trabajo y salidas.",
+occasions:"Escuela · Trabajo · Diario · Salidas"},
+
+{name:"YSL Y Edt",category:"designer",gender:"hombre",image:"images/ysl-y-edt.avif",
+tags:["Fresco","Cítrico","Aromático"],
+smell:"Fresco, cítrico y aromático, con un estilo limpio y juvenil.",
+when:"Ideal para el día, escuela, trabajo y uso diario.",
+occasions:"Escuela · Trabajo · Diario · Casual"},
+
+{name:"YSL MYSLF Edp",category:"designer",gender:"hombre",image:"images/ysl-myslf.avif",
+tags:["Cítrico","Floral","Amaderado"],
+smell:"Fresco y moderno, con cítricos, flores blancas y un fondo amaderado.",
+when:"Muy versátil para diario, citas, trabajo y salidas.",
+occasions:"Diario · Trabajo · Citas · Salidas"},
+
+{name:"Azzaro Chrome",category:"designer",gender:"hombre",image:"images/azzaro-chrome.avif",
+tags:["Fresco","Cítrico","Acuático"],
+smell:"Fresco, cítrico y limpio, con una sensación acuática y ligera.",
+when:"Perfecto para días cálidos, escuela, trabajo y uso diario.",
+occasions:"Escuela · Trabajo · Diario · Días cálidos"},
+
+{name:"Azzaro The Most Wanted Intense Edp",category:"designer",gender:"hombre",image:"images/azzaro-edp.avif",
+tags:["Dulce","Ambarado","Especiado"],
+smell:"Dulce, cálido y especiado, con un carácter intenso y envolvente.",
+when:"Ideal para noches, citas, fiestas y clima fresco.",
+occasions:"Citas · Noches · Fiestas · Clima fresco"},
+
+{name:"Azzaro The Most Wanted Intense Edt",category:"designer",gender:"hombre",image:"images/azzaro-edt.avif",
+tags:["Dulce","Especiado","Amaderado"],
+smell:"Dulce y especiado, con un fondo cálido y amaderado.",
+when:"Excelente para noches, salidas, citas y ocasiones especiales.",
+occasions:"Citas · Noches · Salidas · Eventos"},
+
+{name:"Nautica Voyage",category:"designer",gender:"hombre",image:"images/nautica-voyage.avif",
+tags:["Fresco","Acuático","Verde"],
+smell:"Fresco y acuático, con notas verdes y una sensación limpia y ligera.",
+when:"Ideal para escuela, diario, deporte y días cálidos.",
+occasions:"Escuela · Diario · Gym · Días cálidos"},
+
+
+/* ÁRABES */
+
+{name:"Hawas Ice",category:"arabes",gender:"hombre",image:"images/hawas-ice.avif",
+tags:["Fresco","Dulce","Acuático"],
+smell:"Fresco y dulce, con un estilo acuático, afrutado y ligeramente amaderado.",
+when:"Ideal para días cálidos, salidas, escuela y uso diario.",
+occasions:"Escuela · Diario · Casual · Días cálidos"},
+
+{name:"Hawas Fire",category:"arabes",gender:"hombre",image:"images/hawas-fire.avif",
+tags:["Dulce","Frutal","Amaderado"],
+smell:"Dulce y frutal, con un carácter cálido y moderno.",
+when:"Perfecto para salidas, noches, citas y ocasiones casuales.",
+occasions:"Citas · Salidas · Noches · Casual"},
+
+{name:"Hawas for Him",category:"arabes",gender:"hombre",image:"images/hawas-for-him.avif",
+tags:["Fresco","Acuático","Dulce"],
+smell:"Fresco, acuático y ligeramente dulce, con un estilo juvenil y llamativo.",
+when:"Muy versátil para diario, escuela, salidas y días cálidos.",
+occasions:"Escuela · Diario · Salidas · Casual"},
+
+{name:"Hawas Elixir",category:"arabes",gender:"hombre",image:"images/hawas-elixir.avif",
+tags:["Dulce","Amaderado","Intenso"],
+smell:"Cálido, dulce y amaderado, con una presencia intensa y envolvente.",
+when:"Ideal para noches, citas, eventos y clima fresco.",
+occasions:"Citas · Noches · Eventos · Clima fresco"},
+
+{name:"Hawas Malibu",category:"arabes",gender:"hombre",image:"images/hawas-malibu.avif",
+tags:["Tropical","Fresco","Frutal"],
+smell:"Tropical y fresco, con un carácter frutal y relajado.",
+when:"Ideal para días cálidos, vacaciones, playa y salidas casuales.",
+occasions:"Vacaciones · Playa · Casual · Días cálidos"},
+
+{name:"Hawas Tropical",category:"arabes",gender:"hombre",image:"images/hawas-tropical.avif",
+tags:["Tropical","Frutal","Fresco"],
+smell:"Fresco, tropical y frutal, con una vibra juvenil y relajada.",
+when:"Excelente para días cálidos, vacaciones y salidas.",
+occasions:"Vacaciones · Casual · Salidas · Días cálidos"},
+
+{name:"Hawas Kobra",category:"arabes",gender:"hombre",image:"images/hawas-kobra.avif",
+tags:["Fresco","Aromático","Amaderado"],
+smell:"Aromático y fresco, con un carácter moderno y ligeramente amaderado.",
+when:"Ideal para diario, escuela, salidas y ocasiones casuales.",
+occasions:"Escuela · Diario · Casual · Salidas"},
+
+{name:"Afnan 9AM Dive",category:"arabes",gender:"hombre",image:"images/afnan-9am.avif",
+tags:["Fresco","Cítrico","Acuático"],
+smell:"Fresco y cítrico, con un estilo acuático, limpio y juvenil.",
+when:"Perfecto para días cálidos, escuela, trabajo y uso diario.",
+occasions:"Escuela · Trabajo · Diario · Días cálidos"},
+
+{name:"Afnan 9PM",category:"arabes",gender:"hombre",image:"images/afnan-9pm.avif",
+tags:["Dulce","Frutal","Vainilla"],
+smell:"Dulce y frutal, con vainilla y un fondo cálido y envolvente.",
+when:"Ideal para noches, citas, fiestas y clima fresco.",
+occasions:"Citas · Noches · Fiestas · Clima fresco"},
+
+{name:"Odyssey Aqua",category:"arabes",gender:"hombre",image:"images/odyssey-aqua.avif",
+tags:["Fresco","Acuático","Cítrico"],
+smell:"Fresco, cítrico y acuático, con una sensación limpia y ligera.",
+when:"Ideal para diario, escuela, deporte y días cálidos.",
+occasions:"Escuela · Diario · Gym · Días cálidos"},
+
+{name:"Odyssey Mega",category:"arabes",gender:"hombre",image:"images/odyssey-mega.avif",
+tags:["Fresco","Cítrico","Amaderado"],
+smell:"Fresco y cítrico, con un fondo limpio y ligeramente amaderado.",
+when:"Muy versátil para escuela, trabajo, diario y salidas.",
+occasions:"Escuela · Trabajo · Diario · Casual"},
+
+{name:"Odyssey Spectra",category:"arabes",gender:"hombre",image:"images/odyssey-spectra.avif",
+tags:["Dulce","Frutal","Amaderado"],
+smell:"Dulce y frutal, con un fondo cálido y amaderado.",
+when:"Ideal para salidas, citas, noches y ocasiones especiales.",
+occasions:"Citas · Noches · Salidas · Eventos"},
+
+{name:"Odyssey Mandarin Sky Elixir",category:"arabes",gender:"hombre",image:"images/odyssey-mandarin-elixir.avif",
+tags:["Cítrico","Dulce","Amaderado"],
+smell:"Cítrico y dulce, con mandarina y un fondo cálido y amaderado.",
+when:"Perfecto para salidas, citas, noches y clima fresco.",
+occasions:"Citas · Noches · Salidas · Clima fresco"},
+
+{name:"Odyssey Homme White Edition",category:"arabes",gender:"hombre",image:"images/odyssey-homme-white.avif",
+tags:["Fresco","Aromático","Amaderado"],
+smell:"Fresco y aromático, con un estilo limpio y ligeramente amaderado.",
+when:"Ideal para diario, escuela, trabajo y ocasiones casuales.",
+occasions:"Escuela · Trabajo · Diario · Casual"},
+
+{name:"Odyssey Homme Edition",category:"arabes",gender:"hombre",image:"images/odyssey-homme.avif",
+tags:["Aromático","Amaderado","Fresco"],
+smell:"Aromático y amaderado, con un perfil masculino y versátil.",
+when:"Perfecto para diario, trabajo, escuela y salidas.",
+occasions:"Escuela · Trabajo · Diario · Salidas"},
+
+{name:"Odyssey Go Mango",category:"arabes",gender:"hombre",image:"images/odyssey-go.avif",
+tags:["Frutal","Tropical","Dulce"],
+smell:"Frutal y tropical, con un carácter dulce y juvenil.",
+when:"Ideal para días cálidos, vacaciones y salidas casuales.",
+occasions:"Vacaciones · Casual · Salidas · Días cálidos"},
+
+{name:"Odyssey Artisto",category:"arabes",gender:"hombre",image:"images/odyssey-artisto.avif",
+tags:["Fresco","Aromático","Amaderado"],
+smell:"Fresco y aromático, con un fondo elegante y amaderado.",
+when:"Muy versátil para diario, trabajo, escuela y salidas.",
+occasions:"Escuela · Trabajo · Diario · Eventos"},
+
+{name:"Odyssey Nexus",category:"arabes",gender:"hombre",image:"images/odyssey-nexus.avif",
+tags:["Fresco","Aromático","Amaderado"],
+smell:"Aromático y fresco, con un carácter moderno y ligeramente amaderado.",
+when:"Ideal para diario, escuela, trabajo y ocasiones casuales.",
+occasions:"Escuela · Trabajo · Diario · Casual"},
+
+{name:"Odyssey Mandarin Sky",category:"arabes",gender:"hombre",image:"images/odyssey-mandarin.avif",
+tags:["Cítrico","Dulce","Amaderado"],
+smell:"Cítrico y dulce, con mandarina y un fondo cálido y amaderado.",
+when:"Perfecto para salidas, citas y ocasiones casuales.",
+occasions:"Citas · Salidas · Diario · Casual"},
+
+{name:"Odyssey Limoni Fresh",category:"arabes",gender:"hombre",image:"images/odyssey-limoni.avif",
+tags:["Cítrico","Fresco","Limpio"],
+smell:"Muy fresco y cítrico, con una sensación limpia y energética.",
+when:"Ideal para días cálidos, escuela, gimnasio y uso diario.",
+occasions:"Escuela · Gym · Diario · Días cálidos"},
+
+{name:"Club de Nuit Intense Man",category:"arabes",gender:"hombre",image:"images/cdn-intense.avif",
+tags:["Cítrico","Ahumado","Amaderado"],
+smell:"Cítrico y amaderado, con un toque ahumado y elegante.",
+when:"Ideal para salidas, citas, eventos y ocasiones especiales.",
+occasions:"Citas · Eventos · Salidas · Diario"},
+
+{name:"Club de Nuit Urban Man Elixir",category:"arabes",gender:"hombre",image:"images/cdn-urban.avif",
+tags:["Aromático","Dulce","Amaderado"],
+smell:"Aromático, dulce y amaderado, con una presencia elegante y moderna.",
+when:"Perfecto para citas, noches, eventos y salidas.",
+occasions:"Citas · Noches · Eventos · Salidas"},
+
+{name:"Club de Nuit Iconic Edp",category:"arabes",gender:"hombre",image:"images/cdn-iconic.avif",
+tags:["Fresco","Cítrico","Amaderado"],
+smell:"Fresco y cítrico, con un fondo aromático y amaderado.",
+when:"Muy versátil para escuela, trabajo, diario y salidas.",
+occasions:"Escuela · Trabajo · Diario · Salidas"},
+
+{name:"Club de Nuit Iconic Extrait De Parfum",category:"arabes",gender:"hombre",image:"images/cdn-extrait.avif",
+tags:["Fresco","Cítrico","Amaderado"],
+smell:"Fresco y elegante, con cítricos, notas aromáticas y un fondo amaderado.",
+when:"Ideal para ocasiones especiales, citas, trabajo y eventos.",
+occasions:"Citas · Trabajo · Eventos · Formal"},
+
+{name:"Club de Nuit Precieux I",category:"arabes",gender:"hombre",image:"images/cdn-precieux.avif",
+tags:["Dulce","Amaderado","Elegante"],
+smell:"Dulce y amaderado, con un carácter intenso, moderno y sofisticado.",
+when:"Perfecto para noches, citas, eventos y clima fresco.",
+occasions:"Citas · Noches · Eventos · Clima fresco"},
+
+{name:"Liquid Brun",category:"arabes",gender:"hombre",image:"images/lb.avif",
+tags:["Dulce","Vainilla","Amaderado"],
+smell:"Dulce y cálido, con vainilla, especias y un fondo amaderado.",
+when:"Ideal para noches, citas, eventos y clima fresco.",
+occasions:"Citas · Noches · Eventos · Clima fresco"},
+
+];
+
+const decants = [
+  {name:"Odyssey Aqua",image:"images/odyssey-aqua.avif",p5:"$130 MXN",p10:"$180 MXN"},
+  {name:"Nautica Voyage",image:"images/nautica-voyage.avif",p5:"$75 MXN",p10:"$110 MXN"},
+];
+
+/* ================= FUNCIONES ================= */
+
+function wa(message){
+  return "https://wa.me/" + 525545640509 + "?text=" + encodeURIComponent(message);
+}
+
+function imageHTML(src,name){
+  return `
+    <div class="product-photo">
+      <img src="${src}" alt="${name}"
+        onerror="this.style.display='none';this.parentElement.innerHTML='<span class=no-image>AGREGA TU IMAGEN</span>'">
+    </div>
+  `;
+}
+
+function productCard(p){
+  return `
+    <article class="product-card">
+      ${imageHTML(p.image,p.name)}
+
+      <div class="product-info">
+        <div class="product-type">${p.category==="designer" ? "DISEÑADOR" : "ÁRABE"}</div>
+
+        <h3 class="product-name">${p.name}</h3>
+
+        <p class="product-desc">
+          Consulta disponibilidad y precio por WhatsApp.
+        </p>
+
+        <div class="status">
+          • Disponible por pedido
+        </div>
+
+        <button class="view-details" onclick="showPerfumeDetails('${p.name}')">
+           VER PERFUME
+      </button>
+
+        <a class="whatsapp"
+          href="${wa("Hola, me interesa el "+p.name+". ¿Me puedes dar información y precio?")}"
+          target="_blank">
+          CONSULTAR POR WHATSAPP
+        </a>
+      </div>
+    </article>
+  `;
+}
+
+function renderFeatured(){
+  document.getElementById("featuredGrid").innerHTML =
+    perfumes.slice(0,6).map(productCard).join("");
+}
+
+  function openCatalog(category, fromHistory = false){
+
+  currentCategory = category;
+  currentGender = "all";
+  filterGender("all");
+
+  if(!fromHistory){
+    history.pushState(
+      {
+        page:"catalog",
+        category:category
+      },
+      "",
+      "#" + category
+    );
+  }
+
+currentCategory = category;
+currentGender = "all";
+
+  document.getElementById("home").style.display="none";
+  document.getElementById("decants-page").classList.remove("active");
+  document.getElementById("catalog-page").classList.add("active");
+
+  const designer = category === "designer";
+
+  document.getElementById("catalogHeading").textContent =
+    designer ? "Perfumes de diseñador" : "Perfumes árabes";
+
+  document.getElementById("catalogDescription").textContent =
+    designer
+      ? "Fragancias de casas reconocidas y clásicos que nunca pasan de moda."
+      : "Fragancias árabes seleccionadas por Essence Select.";
+
+  document.getElementById("catalogGrid").innerHTML =
+    perfumes.filter(p=>p.category===category).map(productCard).join("");
+
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+let currentCategory = "designer";
+let currentGender = "all";
+
+function filterGender(gender){
+
+  currentGender = gender;
+
+  document.querySelectorAll(".gender-btn").forEach(btn => {
+    btn.classList.remove("active");
+  });
+
+  const buttons = document.querySelectorAll(".gender-btn");
+
+  if(gender === "all") buttons[0].classList.add("active");
+  if(gender === "hombre") buttons[1].classList.add("active");
+  if(gender === "mujer") buttons[2].classList.add("active");
+  if(gender === "unisex") buttons[3].classList.add("active");
+
+  const filtered = perfumes.filter(p =>
+    p.category === currentCategory &&
+    (gender === "all" || p.gender === gender)
+  );
+
+  document.getElementById("catalogGrid").innerHTML =
+    filtered.length
+      ? filtered.map(productCard).join("")
+      : `<div class="no-results">
+           No hay perfumes de esta categoría disponibles por el momento.
+         </div>`;
+}
+
+function openDecants(){
+
+  document.getElementById("home").style.display="none";
+  document.getElementById("catalog-page").classList.remove("active");
+  document.getElementById("decants-page").classList.add("active");
+
+  document.getElementById("decantGrid").innerHTML =
+    decants.map(d=>`
+      <article class="decant-card">
+
+        <div class="decant-photo">
+          <img src="${d.image}" alt="${d.name}"
+            onerror="this.style.display='none';this.parentElement.innerHTML='<span class=no-image>AGREGA TU IMAGEN</span>'">
+        </div>
+
+        <h3>${d.name}</h3>
+
+        <div class="decant-row">
+          <span>5 ml</span>
+          <span class="decant-price">${d.p5}</span>
+        </div>
+
+        <div class="decant-row">
+          <span>10 ml</span>
+          <span class="decant-price">${d.p10}</span>
+        </div>
+
+        <a class="whatsapp"
+          href="${wa("Hola, quiero pedir un decant de "+d.name+". ¿Me puedes decir qué presentaciones tienen disponibles?")}"
+          target="_blank">
+          QUIERO ESTE DECANT
+        </a>
+
+      </article>
+    `).join("");
+
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function showHome(){
+
+function showHome(){
+
+  document.getElementById("catalog-page").classList.remove("active");
+  document.getElementById("decants-page").classList.remove("active");
+  document.getElementById("home").style.display="block";
+
+  closeMobileMenu();
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+  document.getElementById("catalog-page").classList.remove("active");
+  document.getElementById("decants-page").classList.remove("active");
+  document.getElementById("home").style.display="block";
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+
+function toggleMobileMenu(){
+  document.getElementById("mobileMenu").classList.toggle("active");
+}
+
+function closeMobileMenu(){
+  document.getElementById("mobileMenu").classList.remove("active");
+}
+
+function mobileGoHome(){
+  closeMobileMenu();
+
+  showHome();
+
+  history.pushState(
+    {page:"home"},
+    "",
+    "#inicio"
+  );
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+
+function mobileGoCatalog(category){
+  closeMobileMenu();
+  openCatalog(category);
+}
+
+function mobileGoDecants(){
+  closeMobileMenu();
+
+  openDecants();
+}
+
+function mobileGoContact(){
+  closeMobileMenu();
+
+  showHome();
+
+  setTimeout(() => {
+    const section = document.getElementById("contacto");
+
+    if(section){
+      section.scrollIntoView({
+        behavior:"smooth"
+      });
+    }
+  },100);
+}
+
+function goHomeFromCatalog(){
+  closeMobileMenu();
+  showHome();
+
+  history.pushState(
+    {page:"home"},
+    "",
+    "#inicio"
+  );
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+}
+
+function showPerfumeDetails(name){
+
+  const perfume = perfumes.find(p => p.name === name);
+
+  if(!perfume) return;
+
+  document.getElementById("modalName").textContent = perfume.name;
+
+  document.getElementById("modalTags").innerHTML =
+    (perfume.tags || ["Perfume premium"])
+      .map(tag => `<span>${tag}</span>`)
+      .join("");
+
+  document.getElementById("modalSmell").textContent =
+    perfume.smell || "Consulta con nosotros para conocer más sobre este perfume.";
+
+  document.getElementById("modalWhen").textContent =
+    perfume.when || "Ideal para diferentes ocasiones según tu estilo.";
+
+  document.getElementById("modalOccasions").textContent =
+    perfume.occasions || "Consulta por WhatsApp para recibir una recomendación.";
+
+  document.getElementById("modalWhatsApp").href =
+    wa("Hola, me interesa el perfume "+perfume.name+". ¿Me puedes dar información y precio?");
+
+  document.getElementById("perfumeModal").classList.add("active");
+
+  document.body.style.overflow="hidden";
+}
+
+function closePerfumeDetails(){
+
+  document.getElementById("perfumeModal").classList.remove("active");
+
+  document.body.style.overflow="";
+}
+
+/* ================= BUSCADOR ================= */
+
+document.getElementById("searchInput").addEventListener("input",function(){
+
+  const q = this.value.trim().toLowerCase();
+  const results = document.getElementById("search-results");
+
+  if(!q){
+    results.style.display="none";
+    return;
+  }
+
+  const found = perfumes.filter(p =>
+    p.name.toLowerCase().includes(q)
+  );
+
+  results.style.display="block";
+
+  document.getElementById("resultsGrid").innerHTML =
+    found.length
+      ? found.map(productCard).join("")
+      : `<div class="no-results">
+           No encontramos ese perfume. Escríbenos por WhatsApp y te ayudamos a buscarlo.
+         </div>`;
+});
+
+document.getElementById("generalWhatsApp").href =
+  wa("Hola, quiero consultar por un perfume en Essence Select.");
+
+renderFeatured();
+
+window.addEventListener("popstate", function(event){
+
+  if(event.state && event.state.page === "catalog"){
+
+    openCatalog(
+      event.state.category,
+      true
+    );
+
+  }else{
+
+    showHome();
+
+    window.scrollTo({
+      top:0,
+      behavior:"smooth"
+    });
+
+  }
+
+});
+</script>
+
+</body>
+</html>
